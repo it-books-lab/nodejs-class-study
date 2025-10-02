@@ -1,0 +1,17 @@
+<script>
+    fetch('http://localhost:9999/todos/1',{
+        method: 'DELETE',
+    })
+        .then((response)=>{
+            if(!response.ok){
+                throw new Error('Network response was not ok');
+            }
+            return response.text().then(text=>text?JSON.parse(text):{});
+        })
+        .then((data)=>{
+            console.log('Successfully deleted: ', data);
+        })
+        .catch((error)=>{
+            console.error('Fetch error:', error);
+        });
+</script>

@@ -1,0 +1,29 @@
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    axios
+    .get('http://localhost:9999/todos?id=1')
+    .then((result)=>{
+        console.log(result.data);
+    })
+    .catch((error)=>{
+        console.error(error);
+    });
+
+    axios
+    .get('http://localhost:9999/todos', {params:{id:2}})
+    .then((result)=>{
+        console.log(result.data);
+    })
+    .catch((error)=>{
+        console.error(error);
+    });
+
+    axios
+    .get('http://localhost:9999/todos/3')
+    .then((result)=>{
+        console.log(result.data);
+    })
+    .catch((error)=>{
+        console.error(error);
+    });
+</script>

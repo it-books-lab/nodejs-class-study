@@ -1,0 +1,15 @@
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    const putTodo = async ()=>{
+        try{
+            const response = await axios.put('http://localhost:9999/todos/1',{
+                title: '회귀분석 과제하기',
+                completed: false
+            });
+            console.log(response.data);
+        } catch(error){
+            console.error(error);
+        }
+    };
+    putTodo();
+</script>

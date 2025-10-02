@@ -1,0 +1,14 @@
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    axios
+    .post('http://localhost:9999/todos',{
+        title: 'Learn NodeJS',
+        completed: false
+    })
+    .then((result)=>{
+        console.log(result.data);
+    })
+    .catch((error)=>{
+        console.error(error);
+    });
+</script>

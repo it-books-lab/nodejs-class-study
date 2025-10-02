@@ -1,0 +1,26 @@
+<script>
+    const postData = {
+        title: 'Learn NodeJS',
+        completed: false
+    };
+
+    fetch('http://localhost:9999/todos',{
+        method: 'POST',
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(postData) // 문자열로 변환하여 전송
+    })
+        .then((response)=>{
+            if(!response.ok){
+                throw new Error('Network response was not ok');
+            }
+            return response.json()
+        })
+        .then((data)=>{
+            console.log(data);
+        })
+        .catch((error)=>{
+            console.error('Fetch error:', error);
+        });
+</script>

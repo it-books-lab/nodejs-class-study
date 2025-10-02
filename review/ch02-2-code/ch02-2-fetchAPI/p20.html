@@ -1,0 +1,26 @@
+<script>
+    const putData = {
+        title: 'Learn React',
+        completed: false
+    };
+
+    fetch('http://localhost:9999/todos/1',{
+        method: 'PUT',
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(putData)
+    })
+        .then((response)=>{
+            if(!response.ok){
+                throw new Error('Network response was not ok');
+            }
+            return response.json()
+        })
+        .then((data)=>{
+            console.log(data);
+        })
+        .catch((error)=>{
+            console.error('Fetch error:', error);
+        });
+</script>
